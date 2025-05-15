@@ -12,7 +12,7 @@ st.set_page_config(page_title="Dashboard Consumo de Água", layout="wide")
 # === CARREGAMENTO DE DADOS ===
 @st.cache_data
 def load_data():
-    df = pd.read_excel("Consolidado Consumo de Águas.xlsx")
+    df = pd.read_excel("consolidado_agua.xlsx")
     df.columns = df.columns.str.strip().str.lower()
     df['medição'] = pd.to_datetime(df['medição'], errors='coerce')
     df['ano'] = df['medição'].dt.year.astype(str)
